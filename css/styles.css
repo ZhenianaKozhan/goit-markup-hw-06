@@ -309,6 +309,7 @@ ul {
 }
 
 .form-item {
+  position: relative;
   display: flex;
   flex-direction: column;
   text-align: justify;
@@ -328,9 +329,27 @@ ul {
 
 .form-input {
   margin: 0;
-  padding: 12px 16px;
+  padding: 12px 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+}
+
+.form-input.comment {
+  padding: 12px 16px;
+}
+
+.form-input:focus {
+  outline: 1px solid var(--accent-color);
+}
+
+.icon-modal {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+}
+
+.form-input:focus ~ .icon-modal {
+  fill: var(--accent-color);
 }
 
 .form-input::placeholder {
@@ -344,22 +363,44 @@ textarea {
   resize: none;
 }
 
-.checkbox {
+.checkbox-label {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
 }
 
-.checkbox input[type="checkbox"] {
-
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  margin: -1px;
 }
 
-.checkbox-label {
-  margin-left: 8px;
+.checkbox-icon {
+  margin-right: 8px;
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+
+  border: 2px solid var(--title-text-color);
+  border-radius: 4px;
+}
+
+.checkbox:checked +.checkbox-icon {
+  border-color: transparent;
+  /* background-color: var(--accent-color); */
+  background-image: url('../images/icon-check.svg');
+  background-size: contain;
+  background-origin: border-box;
 }
 
 .policy {
+  margin-left: 5px;
   color: var(--accent-color);
 }
 
@@ -640,6 +681,7 @@ textarea {
   line-height: 1.71;
   letter-spacing: 0.03em;
   text-decoration: none;
+
 }
 
 .address-box .link:hover,
@@ -688,7 +730,7 @@ textarea {
   background-color: var(--accent-color);
 }
 
-.mail-thumb {
+.mail-form {
   display: flex;
 }
 
@@ -703,12 +745,18 @@ textarea {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   background-color: var(--secondary-bg-color);
+  color: var(--primary-white-color);
+  font-size: 16px;
 }
 
 .mail-form input::placeholder {
   font-size: 16px;
   line-height: 1.25;
   color: rgba(255, 255, 255, 0.6);
+}
+
+.mail-form input:focus {
+  outline: 1px solid var(--accent-color);
 }
 
 .sign-up-button {
@@ -736,6 +784,11 @@ textarea {
 .sign-up-button:hover,
 .sign-up-button:focus {
   background-color: var(--button-active-bg-color);
+}
+
+.logo-sign {
+  margin-left: 10px;
+  fill: var(--primary-white-color);
 }
 
 /* Стилі для сторінки Портфоліо */
