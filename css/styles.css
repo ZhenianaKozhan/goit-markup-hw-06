@@ -393,7 +393,6 @@ textarea {
 
 .checkbox:checked +.checkbox-icon {
   border-color: transparent;
-  /* background-color: var(--accent-color); */
   background-image: url('../images/icon-check.svg');
   background-size: contain;
   background-origin: border-box;
@@ -756,7 +755,7 @@ textarea {
 }
 
 .mail-form input:focus {
-  outline: 1px solid var(--accent-color);
+  outline: 1px solid var(--primary-bg-color);
 }
 
 .sign-up-button {
